@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_interests">
+
+    <fragment
+        android:id="@+id/navigation_interests"
+        android:name="com.example.nammaskill.ui.interests.InterestsFragment"
+        android:label="Interests"
+        tools:layout="@layout/fragment_interests">
+        <action
+            android:id="@+id/action_interests_to_courses"
+            app:destination="@id/navigation_courses"
+            app:popUpTo="@id/navigation_interests"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_courses"
+        android:name="com.example.nammaskill.ui.courses.CourseListFragment"
+        android:label="Courses"
+        tools:layout="@layout/fragment_course_list">
+        <action
+            android:id="@+id/action_courses_to_detail"
+            app:destination="@id/courseDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.example.nammaskill.ui.map.MapFragment"
+        android:label="Center Map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/navigation_stories"
+        android:name="com.example.nammaskill.ui.stories.SuccessStoriesFragment"
+        android:label="Success Stories"
+        tools:layout="@layout/fragment_success_stories" />
+
+    <fragment
+        android:id="@+id/courseDetailFragment"
+        android:name="com.example.nammaskill.ui.courses.CourseDetailFragment"
+        android:label="Course Detail"
+        tools:layout="@layout/fragment_course_detail">
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detail_to_apply"
+            app:destination="@id/applyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/applyFragment"
+        android:name="com.example.nammaskill.ui.apply.ApplyFragment"
+        android:label="Apply"
+        tools:layout="@layout/fragment_apply">
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_apply_to_summary"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.nammaskill.ui.apply.SummaryFragment"
+        android:label="Candidate Summary"
+        tools:layout="@layout/fragment_summary">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+</navigation>

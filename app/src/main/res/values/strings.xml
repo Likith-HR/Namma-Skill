@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Namma-Skill</string>
+    <string name="title_courses">Courses</string>
+    <string name="title_map">Center Map</string>
+    <string name="title_stories">Success Stories</string>
+    <string name="apply">Apply Now</string>
+    <string name="filter">Filter</string>
+    <string name="name_hint">Full Name</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="location_hint">Your Location</string>
+    <string name="submit_application">Submit Application</string>
+    <string name="short_term">Short-term</string>
+    <string name="long_term">Long-term</string>
+</resources>
