@@ -1,39 +1,21 @@
-# Project-wide Gradle settings
-.gradle
-/build
-
-# Local configuration file (SDK path, etc)
-local.properties
-
-# Android Studio / IntelliJ IDEA files
-.idea/caches
-.idea/libraries
-.idea/modules.xml
-.idea/workspace.xml
-.idea/navEditor.xml
-.idea/assetWizard.xml
 *.iml
-*.ipr
-*.iws
-
-# Build artifacts
-bin
-gen
-out
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Log files
-*.log
-
-# Captures
-/captures
-
-# Android-specific
-.externalNativeBuild
-.cxx
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizard.xml
+.idea/deploymentTargetSelector.xml
+.idea/deviceManager.xml
+.idea/migrations.xml
+.idea/runConfigurations.xml
+.idea/misc.xml
+.idea/.name
+/build
+capture/
+**/build
 *.apk
 *.ap_
 *.dex

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="gcm_defaultSenderId" translatable="false">453691111822</string>
-    <string name="google_api_key" translatable="false">AIzaSyAutn2o2Frb2oVjI_9M9dqeNvQ-tw9Nacg</string>
-    <string name="google_app_id" translatable="false">1:453691111822:android:feb481d2dc0877c6194cdf</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAutn2o2Frb2oVjI_9M9dqeNvQ-tw9Nacg</string>
-    <string name="google_storage_bucket" translatable="false">skill-tracker-2a39b.firebasestorage.app</string>
-    <string name="project_id" translatable="false">skill-tracker-2a39b</string>
-</resources>
