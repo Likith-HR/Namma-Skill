@@ -2,6 +2,7 @@ package com.example.nammaskill.ui.stories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,11 @@ class StoryAdapter : ListAdapter<SuccessStory, StoryAdapter.StoryViewHolder>(Sto
             binding.textViewStoryRole.text = story.role
             binding.textViewStoryDescription.text = story.description
             binding.imageViewStory.setImageResource(story.imageResId)
+            
+            // Vision Requirement: Photos/Videos simulation
+            itemView.setOnClickListener {
+                Toast.makeText(it.context, "Playing success story video of ${story.name}...", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

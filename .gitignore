@@ -1,6 +1,6 @@
 *.iml
 .gradle
-/local.properties
+local.properties
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -13,6 +13,7 @@
 .idea/runConfigurations.xml
 .idea/misc.xml
 .idea/.name
+.idea/vcs.xml
 /build
 capture/
 **/build

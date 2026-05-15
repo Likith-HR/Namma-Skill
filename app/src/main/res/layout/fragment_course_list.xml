@@ -34,35 +34,42 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Electrician" />
+                android:text="@string/trade_electrician" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chipTailoring"
+                android:id="@+id/chipSewing"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tailoring" />
+                android:text="@string/trade_sewing" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCoding"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trade_coding" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipMobileRepair"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mobile Repair" />
+                android:text="@string/trade_mobile_repair" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipShortTerm"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Short-term" />
+                android:text="@string/short_term" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipLongTerm"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Long-term" />
+                android:text="@string/long_term" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>

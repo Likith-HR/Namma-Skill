@@ -1,5 +1,7 @@
 package com.example.nammaskill.ui.map
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -16,6 +18,14 @@ class CenterAdapter : ListAdapter<TrainingCenter, CenterAdapter.CenterViewHolder
             binding.textViewCenterName.text = center.name
             binding.textViewCenterLocation.text = center.location
             binding.textViewCenterContact.text = "Contact: ${center.contact}"
+            
+            // Vision Requirement: Locate the nearest center
+            binding.buttonLocate.setOnClickListener {
+                val gmmIntentUri = Uri.parse("geo:0,0?q=${center.name}, ${center.location}")
+                val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+                mapIntent.setPackage("com.google.android.apps.maps")
+                it.context.startActivity(mapIntent)
+            }
         }
     }
 

@@ -17,6 +17,7 @@ class CourseDetailFragment : Fragment() {
     private val binding get() = _binding!!
     private val args: CourseDetailFragmentArgs by navArgs()
     private val db = FirebaseFirestore.getInstance()
+    private var currentTrade: String = "general"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +34,13 @@ class CourseDetailFragment : Fragment() {
         loadCourseDetails(courseId)
 
         binding.buttonApply.setOnClickListener {
-            val action = CourseDetailFragmentDirections.actionDetailToApply(courseId)
+            // Pass both courseId AND the trade name to the apply screen
+            val action = CourseDetailFragmentDirections.actionDetailToApply(courseId, currentTrade)
             findNavController().navigate(action)
         }
     }
 
     private fun loadCourseDetails(courseId: String) {
-        // First try to find in dummy data if not in Firestore (for demo)
         val dummy = getDummyCourses().find { it.course_id == courseId }
         if (dummy != null) {
             displayCourse(dummy)
@@ -53,6 +54,7 @@ class CourseDetailFragment : Fragment() {
     }
 
     private fun displayCourse(course: Course) {
+        currentTrade = course.trade
         binding.textViewDetailTitle.text = course.title
         binding.textViewDetailTrade.text = "Trade: ${course.trade}"
         binding.textViewDetailDuration.text = "Duration: ${course.duration}"
@@ -63,10 +65,10 @@ class CourseDetailFragment : Fragment() {
 
     private fun getDummyCourses(): List<Course> {
         return listOf(
-            Course("1", "Electrician Training", "Electrician", "3 Months", "Mysuru", "10th Pass", true, "Comprehensive electrician training covering domestic and industrial wiring."),
-            Course("2", "Tailoring & Fashion", "Tailoring", "6 Months", "Mandya", "8th Pass", false, "Learn tailoring, dress making, and basic fashion design principles."),
-            Course("3", "Mobile Repairing", "Mobile Repair", "2 Months", "Bengaluru", "10th Pass", true, "Hands-on training for repairing hardware and software of all types of smartphones."),
-            Course("4", "Carpentry", "Carpentry", "1 Year", "Hassan", "10th Pass", true, "Professional carpentry course including furniture making and wood carving.")
+            Course("1", "Electrician Training", "Electrician", "3 Months", "Mysuru District", "10th Pass", true, "Comprehensive electrician training."),
+            Course("2", "Modern Sewing & Design", "Sewing", "6 Months", "Mandya District", "8th Pass", false, "Learn modern sewing and fashion design."),
+            Course("3", "Basic Coding Skills", "Coding", "4 Months", "Bengaluru", "12th Pass", true, "Introduction to computer programming."),
+            Course("4", "Mobile Repairing", "Mobile Repair", "2 Months", "Hassan District", "10th Pass", true, "Fix all types of smartphones.")
         )
     }
 

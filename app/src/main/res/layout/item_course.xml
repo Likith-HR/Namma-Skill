@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="12dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,40 +18,63 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Electrician Training" />
 
         <TextView
+            android:id="@+id/textViewDistrict"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="?attr/colorSecondary"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:textColor="?attr/colorOnSecondary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+            tools:text="Mysuru District" />
+
+        <TextView
             android:id="@+id/textViewDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@android:drawable/ic_menu_recent_history"
+            android:drawablePadding="4dp"
             android:textAppearance="?attr/textAppearanceBody2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+            app:layout_constraintTop_toBottomOf="@id/textViewDistrict"
             tools:text="3 Months" />
 
         <TextView
-            android:id="@+id/textViewLocation"
+            android:id="@+id/textViewEligibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:drawableStart="@android:drawable/ic_menu_info_details"
+            android:drawablePadding="4dp"
             android:textAppearance="?attr/textAppearanceBody2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewDuration"
-            tools:text="Mysuru" />
+            app:layout_constraintBottom_toBottomOf="@id/textViewDuration"
+            app:layout_constraintStart_toEndOf="@id/textViewDuration"
+            app:layout_constraintTop_toTopOf="@id/textViewDuration"
+            tools:text="10th Pass" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipJobGuarantee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Job Guarantee"
+            android:text="Job Guarantee ✓"
+            android:textColor="@color/white"
             android:visibility="gone"
+            app:chipBackgroundColor="?attr/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewLocation" />
+            app:layout_constraintTop_toBottomOf="@id/textViewDuration" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

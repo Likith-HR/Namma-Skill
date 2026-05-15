@@ -4,16 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/textViewMapTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Training Centers Nearby"
+        android:text="Locate Training Centers"
         android:textAppearance="?attr/textAppearanceHeadline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutSearch"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter your district or town"
+        app:endIconMode="custom"
+        app:endIconDrawable="@android:drawable/ic_menu_search"
+        app:layout_constraintEnd_toStartOf="@id/buttonGPS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewMapTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSearchLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/buttonGPS"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Use GPS"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:layout_constraintBottom_toBottomOf="@id/textInputLayoutSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textInputLayoutSearch"
+        app:tint="?attr/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Showing all centers"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayoutSearch" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCenters"
@@ -23,7 +66,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewMapTitle"
+        app:layout_constraintTop_toBottomOf="@id/textViewStatus"
         tools:listitem="@layout/item_center" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

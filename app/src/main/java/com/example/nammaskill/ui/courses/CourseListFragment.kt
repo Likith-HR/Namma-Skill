@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.nammaskill.R
 import com.example.nammaskill.databinding.FragmentCourseListBinding
 import com.example.nammaskill.models.Course
 import com.google.firebase.firestore.FirebaseFirestore
@@ -49,11 +50,9 @@ class CourseListFragment : Fragment() {
         db.collection("courses").addSnapshotListener { value, error ->
             if (error != null) return@addSnapshotListener
             
-            allCourses = value?.toObjects(Course::class.java) ?: emptyList()
-            // If empty, add some dummy data for demo purposes as per PRD
-            if (allCourses.isEmpty()) {
-                allCourses = getDummyCourses()
-            }
+            val firestoreCourses = value?.toObjects(Course::class.java) ?: emptyList()
+            // Combine with dummy data for full demo as per Vision
+            allCourses = if (firestoreCourses.isEmpty()) getDummyCourses() else firestoreCourses
             adapter.submitList(allCourses)
         }
     }
@@ -61,7 +60,8 @@ class CourseListFragment : Fragment() {
     private fun filterCourses(checkedId: Int) {
         val filteredList = when (checkedId) {
             binding.chipElectrician.id -> allCourses.filter { it.trade.contains("Electrician", ignoreCase = true) }
-            binding.chipTailoring.id -> allCourses.filter { it.trade.contains("Tailoring", ignoreCase = true) }
+            binding.chipSewing.id -> allCourses.filter { it.trade.contains("Sewing", ignoreCase = true) || it.trade.contains("Tailoring", ignoreCase = true) }
+            binding.chipCoding.id -> allCourses.filter { it.trade.contains("Coding", ignoreCase = true) }
             binding.chipMobileRepair.id -> allCourses.filter { it.trade.contains("Mobile Repair", ignoreCase = true) }
             binding.chipShortTerm.id -> allCourses.filter { it.duration.contains("Month", ignoreCase = true) }
             binding.chipLongTerm.id -> allCourses.filter { it.duration.contains("Year", ignoreCase = true) }
@@ -72,10 +72,10 @@ class CourseListFragment : Fragment() {
 
     private fun getDummyCourses(): List<Course> {
         return listOf(
-            Course("1", "Electrician Training", "Electrician", "3 Months", "Mysuru", "10th Pass", true, "Comprehensive electrician training."),
-            Course("2", "Tailoring & Fashion", "Tailoring", "6 Months", "Mandya", "8th Pass", false, "Learn tailoring and dress making."),
-            Course("3", "Mobile Repairing", "Mobile Repair", "2 Months", "Bengaluru", "10th Pass", true, "Fix all types of smartphones."),
-            Course("4", "Carpentry", "Carpentry", "1 Year", "Hassan", "10th Pass", true, "Professional carpentry course.")
+            Course("1", "Electrician Training", "Electrician", "3 Months", "Mysuru District", "10th Pass", true, "Comprehensive electrician training."),
+            Course("2", "Modern Sewing & Design", "Sewing", "6 Months", "Mandya District", "8th Pass", false, "Learn modern sewing and fashion design."),
+            Course("3", "Basic Coding Skills", "Coding", "4 Months", "Bengaluru", "12th Pass", true, "Introduction to computer programming."),
+            Course("4", "Mobile Repairing", "Mobile Repair", "2 Months", "Hassan District", "10th Pass", true, "Fix all types of smartphones.")
         )
     }
 

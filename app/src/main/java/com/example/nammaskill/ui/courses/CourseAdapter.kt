@@ -27,8 +27,9 @@ class CourseAdapter(private val onClick: (Course) -> Unit) :
         fun bind(course: Course) {
             currentCourse = course
             binding.textViewTitle.text = course.title
-            binding.textViewDuration.text = "Duration: ${course.duration}"
-            binding.textViewLocation.text = "Location: ${course.location}"
+            binding.textViewDistrict.text = if (course.location.contains("District")) course.location else "${course.location} District"
+            binding.textViewDuration.text = course.duration
+            binding.textViewEligibility.text = course.eligibility
             binding.chipJobGuarantee.visibility = if (course.job_guarantee) View.VISIBLE else View.GONE
         }
     }

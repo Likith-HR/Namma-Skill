@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.nammaskill.databinding.FragmentApplyBinding
 import com.example.nammaskill.models.CourseApplication
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.messaging.FirebaseMessaging
 
 class ApplyFragment : Fragment() {
 
@@ -46,30 +47,35 @@ class ApplyFragment : Fragment() {
             return
         }
 
-        // Create the application object
+        // 1. Create the application object
         val application = CourseApplication(
             name = name,
             phone = phone,
             course_id = args.courseId
         )
 
-        // Submit to Firebase in the background
-        db.collection("applications").add(application)
-            .addOnSuccessListener {
-                Log.d("ApplyFragment", "Application saved in background")
-            }
-            .addOnFailureListener { e ->
-                Log.e("ApplyFragment", "Background sync failed", e)
+        // 2. REALLY Subscribe to notifications for this specific trade
+        // If user applies for "Coding", they will now get alerts for "trade_coding"
+        val topic = "trade_${args.trade.lowercase().replace(" ", "_")}"
+        FirebaseMessaging.getInstance().subscribeToTopic(topic)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d("ApplyFragment", "Successfully subscribed to $topic")
+                }
             }
 
-        // PRD Flow: Tap Apply -> Generates Candidate Summary
-        // We navigate immediately for a better user experience on slow connections
-        try {
-            val action = ApplyFragmentDirections.actionApplyToSummary(name, phone, args.courseId)
-            findNavController().navigate(action)
-        } catch (e: Exception) {
-            Log.e("ApplyFragment", "Navigation failed", e)
-        }
+        // 3. Submit data to Firebase in the background
+        db.collection("applications").add(application)
+            .addOnSuccessListener {
+                Log.d("ApplyFragment", "Application saved to Firestore")
+            }
+            .addOnFailureListener { e ->
+                Log.e("ApplyFragment", "Firestore save failed", e)
+            }
+
+        // 4. Instant Confirmation (PRD: Generates Candidate Summary)
+        val action = ApplyFragmentDirections.actionApplyToSummary(name, phone, args.courseId)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

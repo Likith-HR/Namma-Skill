@@ -3,12 +3,20 @@
     <string name="title_courses">Courses</string>
     <string name="title_map">Center Map</string>
     <string name="title_stories">Success Stories</string>
-    <string name="apply">Apply Now</string>
+    <string name="apply">I am interested</string>
     <string name="filter">Filter</string>
     <string name="name_hint">Full Name</string>
     <string name="phone_hint">Phone Number</string>
-    <string name="location_hint">Your Location</string>
-    <string name="submit_application">Submit Application</string>
+    <string name="location_hint">Your Location (Village/Town)</string>
+    <string name="submit_application">Send Interest Ping</string>
     <string name="short_term">Short-term</string>
     <string name="long_term">Long-term</string>
+    <string name="interest_ping_success">Interest Ping Sent! The trainer will call you back soon.</string>
+    <string name="welcome_namma_skill">Welcome to Namma-Skill</string>
+    <string name="select_interests_desc">Select your interests to get alerts when new batches start.</string>
+    <string name="trade_electrician">Electrician</string>
+    <string name="trade_sewing">Sewing</string>
+    <string name="trade_coding">Coding</string>
+    <string name="trade_mobile_repair">Mobile Repair</string>
+    <string name="continue_btn">Continue</string>
 </resources>

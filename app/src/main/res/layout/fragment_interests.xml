@@ -19,7 +19,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Select your interests to find the best training programs for you."
+        android:text="Select your interests to get alerts when new batches start."
         android:textAppearance="?attr/textAppearanceBody1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,40 +35,32 @@
         app:layout_constraintTop_toBottomOf="@id/textViewSelectInterests">
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/chipElectrician"
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Electrician" />
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/chipSewing"
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tailoring" />
+            android:text="Sewing" />
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/chipCoding"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coding" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMobileRepair"
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mobile Repair" />
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Carpentry" />
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Plumbing" />
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Driving" />
 
     </com.google.android.material.chip.ChipGroup>
 
