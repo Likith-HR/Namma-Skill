@@ -1,53 +1,46 @@
 # Namma-Skill – Vocational Training Opportunity Tracker
 
-**Namma-Skill** is a professional Android application developed to bridge the information gap between government vocational training centers and rural youth. The platform centralizes course discovery, simplifies the application process through an "Interest Ping" mechanism, and provides real-time location-based center tracking.
+**Namma-Skill** is a professional Android application developed to bridge the information gap between government vocational training centers and rural youth. The platform centralizes course discovery, simplifies the engagement process through an "Interest Ping" mechanism, and provides real-time location-based center tracking.
 
 ## 🚀 Key Features
 
 ### 1. Course Finder & Filtering
-*   **Multi-Category Browsing**: Specialized filters for trades including **Electrician, Sewing, Coding, and Mobile Repair**.
-*   **Smart Filtering**: Ability to filter programs by duration (**Short-term vs. Long-term**) to fit the user's schedule.
-*   **Detailed Insights**: Each course card highlights critical details like **Eligibility** (e.g., 10th Pass) and a **Job Guarantee** badge.
+*   **Trade-Based Discovery**: Specialized filters for vocational trades including **Electrician, Sewing, Coding, and Mobile Repair**.
+*   **Flexible Duration**: Ability to filter programs by duration (**Short-term vs. Long-term**) to accommodate various schedules.
+*   **Comprehensive Details**: Each course highlights critical information such as **Eligibility** (e.g., 10th Pass) and a prominent **Job Guarantee** badge for verified programs.
 
 ### 2. Intelligent "Interest Ping" System
-*   **One-Click Application**: Replaces complex forms with a simple "I am interested" flow.
-*   **Automated Candidate Summary**: Instantly generates a professional summary for the user upon submission.
-*   **Lead Generation**: User contact details are synced in real-time to Firebase Firestore for immediate callback coordination by trainers.
+*   **Streamlined Application**: Replaces complex application forms with a simple "I am interested" flow to reduce barriers for rural users.
+*   **Automated Candidate Summary**: Instantly generates a professional profile summary upon submission, providing immediate confirmation.
+*   **Real-time Lead Sync**: User contact details are synchronized in real-time to **Firebase Firestore**, enabling training centers to perform immediate callbacks.
 
-### 3. "Complete" Center Map (GPS & Search)
-*   **Real-time GPS Detection**: Automatically identifies the user's current district to show the nearest training facilities.
-*   **Manual Search**: Allows users to manually type towns or districts to find centers across the region.
-*   **Direct Communication**: Integrated **"Call Center"** and **"Locate"** buttons to initiate phone calls or open Google Maps navigation instantly.
+### 3. Comprehensive Center Map
+*   **GPS-Powered Detection**: Leverages Google Location Services to automatically identify the user's current district and filter for the nearest training facilities.
+*   **Manual Search Integration**: A responsive search bar allows users to manually explore centers in other districts or towns.
+*   **Direct Connectivity**: Includes **"Call Center"** buttons to initiate phone contact with trainers and **"Locate"** buttons for one-tap Google Maps navigation.
 
-### 4. Smart Notifications
-*   **Topic-Based Alerts**: Users are automatically subscribed to Firebase Cloud Messaging (FCM) topics based on their interest pings.
-*   **Batch Updates**: System-ready to push alerts for new batch openings or enrollment deadlines in the user's favorite trades.
-
-### 5. Localized Success Stories
-*   **Community Trust**: Features simulated success stories of local candidates with photo-based evidence to motivate new users.
+### 4. Localized Success Stories
+*   **Community Trust**: Showcases simulated success stories of local candidates with photo-based evidence to build motivation and trust within the rural community.
 
 ## 🛠️ Tech Stack
 
-*   **Language**: 100% Kotlin
-*   **UI Framework**: Material Design 3 with ViewBinding for robust layout management.
-*   **Navigation**: Jetpack Navigation Component for a seamless single-activity architecture.
-*   **Database**: Firebase Firestore for real-time, offline-capable data synchronization.
-*   **Cloud Messaging**: Firebase FCM for targeted push notifications.
-*   **Location Services**: Google Play Services Location API & Geocoding for district detection.
+*   **Language**: Kotlin
+*   **Architecture**: Single-Activity Architecture using **Jetpack Navigation**, ViewBinding, and Material Design 3.
+*   **Backend**: **Firebase Firestore** for dynamic, real-time data synchronization and persistent local caching.
+*   **Location Services**: **Google Play Services Location API** and Geocoding for accurate district detection.
 
-## 📱 Application Flow
-1.  **Interests**: First-time users select their vocational preferences.
-2.  **Discovery**: Browse courses pulling from both a local demo set and live Firebase data.
-3.  **Engagement**: Tap "I am interested" to view full curriculum and eligibility details.
-4.  **Submission**: Submit an "Interest Ping" to register for a trainer callback.
-5.  **Confirmation**: View the auto-generated **Candidate Summary**.
-6.  **Navigation**: Use the Center Map to find and contact physical ITIs/centers.
+## 📱 User Flow
+1.  **Discovery**: Browse the course catalog with real-time updates from Firebase.
+2.  **Details**: Review trade curriculum, eligibility criteria, and job placement assurance.
+3.  **Engagement**: Tap "I am interested" to open the Interest Ping form.
+4.  **Submission**: Provide basic profile details to receive a trainer callback.
+5.  **Summary**: Review the auto-generated **Candidate Summary** confirmation.
+6.  **Navigation**: Locate physical centers using GPS or manual search and contact them directly.
 
-## 🔧 Setup & Installation
+## 🔧 Installation
 1.  Clone the repository: `git clone https://github.com/Likith-HR/Namma-Skill.git`
-2.  Place your `google-services.json` file in the `app/` directory.
-3.  Enable **Firestore** and **Cloud Messaging** in your Firebase Console.
-4.  Build the project using **Gradle 8.5** and **Android Studio Giraffe+**.
+2.  Ensure a valid `google-services.json` file is present in the `app/` directory.
+3.  Build using **Android Studio Giraffe (or newer)** with **Gradle 8.5**.
 
 ---
-*This project was developed as a core component of the Internship Evaluation Portfolio.*
+*Developed as a core component of the Internship Evaluation Portfolio.*
