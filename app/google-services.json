@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "453691111822",
+    "project_id": "skill-tracker-2a39b",
+    "storage_bucket": "skill-tracker-2a39b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453691111822:android:feb481d2dc0877c6194cdf",
+        "android_client_info": {
+          "package_name": "com.example.nammaskill"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAutn2o2Frb2oVjI_9M9dqeNvQ-tw9Nacg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
